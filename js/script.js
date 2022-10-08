@@ -19,3 +19,6 @@ listen(document, 'mouseup touchend')
       stiffness: 500,
     }).start(ballXY1);
   });
+if (screen.width <= 699) {
+    document.location = "index-mobile.html";
+    }
