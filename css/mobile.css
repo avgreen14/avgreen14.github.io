@@ -108,7 +108,20 @@ h2 {
     padding: 12px 10px;
     width: 23px;
     height: 17px;
+    background-color: var(--primColor);
+    border: 2px solid var(--secoColor);
+    border-radius: var(--cornerRad);
+    color: var(--secoColor);
+    cursor: pointer;
+    user-select: none;
+    outline: none;
     transition: transform 200ms ease-in-out 0s;
+  }
+  summary::before,
+  summary::after {
+    position: static;
+    top: 0;
+    left: 0;
   }
   summary::before {
     content: "";
@@ -116,8 +129,14 @@ h2 {
   summary::after {
     content: "|||";
   }
+  summary:hover {
+    transform: scale(1.1);
+  }
   summary::marker {
     font-size: 0;
+  }
+  summary::-webkit-details-marker {
+    display: none;
   }
   details[open] .menu {
     animation-name: menuAnim;
@@ -131,6 +150,8 @@ h2 {
   .menu {
     height: 0;
     width: fit-content;
+    border-radius: var(--cornerRad);
+    background-color: var(--primColor);
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
     margin-top: 8px;
     display: flex;
@@ -160,6 +181,7 @@ h2 {
   }
   details::before {
     content: "← My Projects";
+    color: var(--secoColor);
     position: absolute;
     margin-left: 80px;
     padding: 12.5px 10px;
